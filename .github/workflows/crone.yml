@@ -2,6 +2,10 @@ on:
   schedule:
   - cron: "0 2 * * *"
 jobs:
-  runs-on: ubuntu-latest
+  downl:
+    name: update_apk
+    runs-on: "ubuntu-latest"
+    steps:
+      - run: \apk download\apk-to-git-master\index.js
   
     
