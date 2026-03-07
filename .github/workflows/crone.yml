@@ -4,14 +4,28 @@ on:
   schedule:
   - cron: "0 0 * * *"
 jobs:
-  downl:
-    name: update_apk
-    runs-on: "ubuntu-latest"
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout rep
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
 
-      - name: work
-        run: \apk download\apk-to-git-master\package.json
-  
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com/
+      - run: npm ci
+      - run: npm publish
     
