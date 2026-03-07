@@ -12,6 +12,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: work
-      - run: \apk download\apk-to-git-master\package.json
+        run: \apk download\apk-to-git-master\package.json
   
     
