@@ -11,21 +11,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # - run: apk download\apk-to-git-master npm ci
-      - run: apk download\apk-to-git-master npm test
+      - run: nmp install
+      # - run: npm ci
+      - run: npm test
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
-      - run: apk download\apk-to-git-master npm ci
-      - run: apk download\apk-to-git-master npm publish
+  # publish-gpr:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     packages: write
+  #     contents: read
+  #   steps:
+  #     - uses: actions/checkout@v5
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #     # - run: npm ci
+  #     - run: nmp install
+  #     # - run: npm publish
     
