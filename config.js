@@ -1,7 +1,7 @@
 module.exports = {
     "packageName": "ru.oneme.app",
-    "targetFolder": "./source_apk",
-    "versionFile": "./local_version",
+    "targetFolder": "./patcher_privacy_messange",
+    "versionFile": "./source_apk",
     "git": {
         "repository": "https://github.com/Wertor8/patcher_privacy_messange.git",
         "credentials": {
