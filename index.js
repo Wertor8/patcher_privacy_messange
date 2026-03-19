@@ -36,7 +36,7 @@ async function download(downloadDir) {
     console.log("Downloading APK...");
 
     await page.click('.abutton.is-success'); // this redirects us to download page
-    await page.waitFor(10000);
+    await page.waitFor(40000);
     await browser.close();
 }
 
