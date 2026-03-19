@@ -28,6 +28,7 @@ async function download(downloadDir) {
     const url = 'https://apkcombo.com/en-sk/apk-downloader/?q=' + config.packageName;
     console.log("Navigating to " + url);
     await page.goto(url, {waitUntil: 'networkidle0'});
+    console.log("Navigating success ");
 
     await page.waitForSelector('.abutton.is-success');
     await page.click('.abutton.is-success'); // this redirects us to download page
