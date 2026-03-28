@@ -29,7 +29,7 @@ async function download(downloadDir) {
     console.log("Navigating to " + url);
     await page.goto(url, {waitUntil: 'networkidle2'});
     
-    const downloadButtonSelector = '.variant.octs';
+    const downloadButtonSelector = '.file-list';
     console.log(`Waiting for initial download button with selector: ${downloadButtonSelector}`);
     await page.waitForSelector(downloadButtonSelector, { visible: true, timeout: 60000 });
     console.log("Initial download button found.");
